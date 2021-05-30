@@ -1,8 +1,8 @@
+import alphabet
 import time
 import random
 d = 1
 a = 1
-word = [1,2,3,4,5,6,7,8,9,0,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 while a!=0:
     print('Введите "Начать", если готовы к работе:',sep='\n')
     n = input()
@@ -26,7 +26,7 @@ while d != 'True':
     time.sleep(1)
     print('Ваш пароль: ',end='')
     for i in range(x):
-        l=random.choice(word)
+        l=random.choice(alphabet.word)
         print(l,end='')
     print('')
     time.sleep(2)
