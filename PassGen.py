@@ -1,40 +1,66 @@
 import alphabet
+from locales import ru,en
 import time
 import random
 d = 1
 a = 1
+
+print("Enter your language: English or Русский")
+lang = input()
+
+if lang == "Русский" or lang == 'русский' or lang == 'russian' or lang == 'Russian':
+    start = ru.start
+    license = ru.license
+    howmuch = ru.howmuch
+    trial = ru.trial
+    generating = ru.generating
+    secondsleft = ru.secondsleft
+    yourpass = ru.yourpass
+    again = ru.again
+    youraredead = ru.youaredead
+if lang == "English" or lang == 'english' or lang == 'Английский' or lang == 'английский':
+    start = en.start
+    license = en.license
+    howmuch = en.howmuch
+    trial = en.trial
+    generating = en.generating
+    secondsleft = en.secondsleft
+    yourpass = en.yourpass
+    again = en.again
+    youraredead = en.youaredead
+
 while a!=0:
-    print('Введите "Начать", если готовы к работе:',sep='\n')
+    print(start,sep='\n')
     n = input()
-    if n=='Начать' or n=='начать':
+    if n=='Начать' or n=='начать' or n=='start' or n=='Start':
         a=0
-print('Введите номер лицензии, если вы приобретали программу. В противном случае, введите 0:')
+print(license)
 y = int(input())
 while d != 'True':
-    print('Сколько символов должен содержать пароль?')
+    print(howmuch)
     x = int(input())
     if y == 0:
-        print('Т.к. у вас бесплатная версия программы, то ожидание вашего пароля будет составлять 15 секунд.')
+        print(trial)
         time.sleep(1)
         for i in range(1,16):
             k = 15-i
-            print('Осталось',k,'секунд.')
+            print(secondsleft,k)
             time.sleep(1)
-    print('Генерируем пароль...')
+    print(generating)
     time.sleep(1)
     print('...')
     time.sleep(1)
-    print('Ваш пароль: ',end='')
+    print(yourpass,end='')
     for i in range(x):
         l=random.choice(alphabet.word)
         print(l,end='')
     print('')
     time.sleep(2)
-    print('Желаете ли сгенерировать новый пароль?')
+    print(again)
     d = input()
-    if d == 'Да' or d == 'да':
+    if d == 'Да' or d == 'да' or d == 'Yes' or d=='yes':
         d='False'
-    elif d == 'Нет' or d == 'нет':
-        d='True'
-print('Спасибо за использование данной программы, всего вам доброго. До свидания!')
+    else:
+        break
+print(youraredead)
 time.sleep(5)
