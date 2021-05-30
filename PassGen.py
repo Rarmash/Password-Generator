@@ -1,76 +1,53 @@
+import gettext
 import alphabet
-from locales import ru,en,az
 import time
 import random
 d = 1
 a = 1
 
-print("Enter your language: English or Русский or Azerbaijanian")
-lang = input()
-
+print("Enter your language: English or Русский")
+lang = input()  
 if lang == "Русский" or lang == 'русский' or lang == 'russian' or lang == 'Russian':
-    start = ru.start
-    license = ru.license
-    howmuch = ru.howmuch
-    trial = ru.trial
-    generating = ru.generating
-    secondsleft = ru.secondsleft
-    yourpass = ru.yourpass
-    again = ru.again
-    youraredead = ru.youaredead
+    ru = gettext.translation('ru', localedir='locales', languages=['ru'])
+    ru.install()
+    _ = ru.gettext
 if lang == "English" or lang == 'english' or lang == 'Английский' or lang == 'английский':
-    start = en.start
-    license = en.license
-    howmuch = en.howmuch
-    trial = en.trial
-    generating = en.generating
-    secondsleft = en.secondsleft
-    yourpass = en.yourpass
-    again = en.again
-    youraredead = en.youaredead
-if lang == "Azerbaijanian" or lang == 'azerbaijanian':
-    start = az.start
-    license = az.license
-    howmuch = az.howmuch
-    trial = az.trial
-    generating = az.generating
-    secondsleft = az.secondsleft
-    yourpass = az.yourpass
-    again = az.again
-    youraredead = az.youaredead
+    en = gettext.translation('en', localedir='locales', languages=['en'])
+    en.install()
+    _ = en.gettext
 
 while a!=0:
-    print(start,sep='\n')
+    print (_('Введите "Начать", если готовы к работе:'),sep='\n')
     n = input()
     if n=='Начать' or n=='начать' or n=='start' or n=='Start':
         a=0
-print(license)
+print(_('Введите номер лицензии, если вы приобретали программу. В противном случае, введите 0:'))
 y = int(input())
 while d != 'True':
-    print(howmuch)
+    print(_('Сколько символов должен содержать пароль?'))
     x = int(input())
     if y == 0:
-        print(trial)
+        print(_('Т.к. у вас бесплатная версия программы, то ожидание вашего пароля будет составлять 15 секунд.'))
         time.sleep(1)
         for i in range(1,16):
             k = 15-i
-            print(secondsleft,k)
+            print(_('Секунд осталось:'),k)
             time.sleep(1)
-    print(generating)
+    print(_('Генерируем пароль...'))
     time.sleep(1)
     print('...')
     time.sleep(1)
-    print(yourpass,end='')
+    print(_('Ваш пароль: '),end='')
     for i in range(x):
         l=random.choice(alphabet.word)
         print(l,end='')
     print('')
     time.sleep(2)
-    print(again)
+    print(_('Желаете ли сгенерировать новый пароль?'))
     d = input()
     if d == 'Да' or d == 'да' or d == 'Yes' or d=='yes':
         d='False'
     else:
         break
-print(youraredead)
+print(_('Спасибо за использование данной программы, всего вам доброго. До свидания!'))
 time.sleep(5)

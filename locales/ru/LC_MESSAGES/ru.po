@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2021-05-31 00:40+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=cp1251\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: PassGen.py:25
+msgid "Введите \"Начать\", если готовы к работе:"
+msgstr "Введите \"Начать\", если готовы к работе:"
+
+#: PassGen.py:29
+msgid "Введите номер лицензии, если вы приобретали программу. В противном случае, введите 0:"
+msgstr "Введите номер лицензии, если вы приобретали программу. В противном случае, введите 0:"
+
+#: PassGen.py:32
+msgid "Сколько символов должен содержать пароль?"
+msgstr "Сколько символов должен содержать пароль?"
+
+#: PassGen.py:35
+msgid "Т.к. у вас бесплатная версия программы, то ожидание вашего пароля будет составлять 15 секунд."
+msgstr "Т.к. у вас бесплатная версия программы, то ожидание вашего пароля будет составлять 15 секунд."
+
+#: PassGen.py:39
+msgid "Секунд осталось:"
+msgstr "Секунд осталось:"
+
+#: PassGen.py:41
+msgid "Генерируем пароль..."
+msgstr "Генерируем пароль..."
+
+#: PassGen.py:45
+msgid "Ваш пароль: "
+msgstr "Ваш пароль: "
+
+#: PassGen.py:51
+msgid "Желаете ли сгенерировать новый пароль?"
+msgstr "Желаете ли сгенерировать новый пароль?"
+
+#: PassGen.py:57
+msgid "Спасибо за использование данной программы, всего вам доброго. До свидания!"
+msgstr "Спасибо за использование данной программы, всего вам доброго. До свидания!"
+
