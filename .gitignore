@@ -1,0 +1,5 @@
+/build_windows/*
+key.ico
+pass.py
+/__pycache__/*
+/locales/__pycache__/*
