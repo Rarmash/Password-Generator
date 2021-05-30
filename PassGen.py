@@ -1,11 +1,11 @@
 import alphabet
-from locales import ru,en
+from locales import ru,en,az
 import time
 import random
 d = 1
 a = 1
 
-print("Enter your language: English or Русский")
+print("Enter your language: English or Русский or Azerbaijanian")
 lang = input()
 
 if lang == "Русский" or lang == 'русский' or lang == 'russian' or lang == 'Russian':
@@ -28,6 +28,16 @@ if lang == "English" or lang == 'english' or lang == 'Английский' or l
     yourpass = en.yourpass
     again = en.again
     youraredead = en.youaredead
+if lang == "Azerbaijanian" or lang == 'azerbaijanian':
+    start = az.start
+    license = az.license
+    howmuch = az.howmuch
+    trial = az.trial
+    generating = az.generating
+    secondsleft = az.secondsleft
+    yourpass = az.yourpass
+    again = az.again
+    youraredead = az.youaredead
 
 while a!=0:
     print(start,sep='\n')
