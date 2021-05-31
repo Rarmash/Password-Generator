@@ -8,3 +8,6 @@ setup.py
 /modules/license.txt.aes
 /modules/codeencrypt.py
 /modules/codedecrypt.py
+0 license.aes
+1 license.aes
+2 license.aes
