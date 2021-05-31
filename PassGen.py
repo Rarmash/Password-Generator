@@ -1,10 +1,14 @@
+import os
 import gettext
-import alphabet
+from modules import alphabet,encrypt,decrypt
 import time
 import random
 d = 1
 a = 1
 rr = 0
+
+file = "license.txt"
+fileaes = "license.txt.aes"
 
 print("Enter your language: English or Русский")
 lang = input()  
@@ -22,15 +26,19 @@ while a!=0:
     n = input()
     if n=='Начать' or n=='начать' or n=='start' or n=='Start':
         a=0
-print(_('Введите номер лицензии, если вы приобретали программу. В противном случае, введите 000000.'))
-y = input()
 
-if (int(y[0]) + int(y[1]) + int(y[2])) == 0 and (int(y[3]) + int(y[4]) + int(y[5])) == 0:
-    rr = 2
-elif (int(y[0]) + int(y[1]) + int(y[2])) == 17 and (int(y[3]) + int(y[4]) + int(y[5])) == 9:
+decrypt.decrypt(fileaes)
+with open('license.txt','r') as file123:
+    ll = file123.readline()
+ll_int = [int(x) for x in ll]
+ll = sum(ll_int)
+if ll == 26:
     rr = 1
+elif ll == 0:
+    rr = 2
 else:
     rr = 0
+encrypt.encrypt(file)
 
 while d != 'True':
     print(_('Сколько символов должен содержать пароль?'))

@@ -3,3 +3,8 @@ key.ico
 setup.py
 /__pycache__/*
 /locales/__pycache__/*
+/modules/__pycache__/*
+/modules/passlicense.py
+/modules/license.txt.aes
+/modules/codeencrypt.py
+/modules/codedecrypt.py
