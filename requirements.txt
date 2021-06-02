@@ -1,2 +1,3 @@
 easy_password_generator==0.0.7
 pyAesCrypt==6.0.0
+pytransform==0.2.3.2
