@@ -1,6 +1,5 @@
 from easy_password_generator import PassGen
 from configparser import ConfigParser
-import gettext
 from modules import crypt,localeCreate
 import time
 import os
@@ -19,7 +18,6 @@ language = config.get("LOCALE", "language")  # устанавливаем лок
 section = language.upper()
 config.read("locales/{}.ini".format(language))  # читаем файл строковых данных
 
-
 start = config.get(section, "start")
 howmany = config.get(section, "howmany")
 missing = config.get(section, "missing")
@@ -29,7 +27,6 @@ generating = config.get(section, "generating")
 yourpass = config.get(section, "yourpass")
 newpass = config.get(section, "newpass")
 exit = config.get(section, "exit")
-
 
 file = "license.txt"
 fileaes = "license.txt.aes"
