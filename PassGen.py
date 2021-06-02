@@ -1,28 +1,41 @@
 from easy_password_generator import PassGen
+from configparser import ConfigParser
 import gettext
-from modules import crypt
+from modules import crypt,localeCreate
 import time
 import os
 d = 1
 a = 1
 rr = 0
 
+config = ConfigParser()
+path = "settings.ini"
+
+if os.path.exists('settings.ini') == False:
+    localeCreate.localeCreate(path)
+
+config.read("settings.ini")
+language = config.get("LOCALE", "language")  # устанавливаем локаль
+section = language.upper()
+config.read("locales/{}.ini".format(language))  # читаем файл строковых данных
+
+
+start = config.get(section, "start")
+howmany = config.get(section, "howmany")
+missing = config.get(section, "missing")
+corrupt = config.get(section, "corrupt")
+secleft = config.get(section, "secleft")
+generating = config.get(section, "generating")
+yourpass = config.get(section, "yourpass")
+newpass = config.get(section, "newpass")
+exit = config.get(section, "exit")
+
+
 file = "license.txt"
 fileaes = "license.txt.aes"
 
-print("Enter your language: English or Русский")
-lang = input()  
-if lang == "Русский" or lang == 'русский' or lang == 'russian' or lang == 'Russian':
-    ru = gettext.translation('ru', localedir='locales', languages=['ru'])
-    ru.install()
-    _ = ru.gettext
-if lang == "English" or lang == 'english' or lang == 'Английский' or lang == 'английский':
-    en = gettext.translation('en', localedir='locales', languages=['en'])
-    en.install()
-    _ = en.gettext
-
 while a!=0:
-    print (_("Enter 'Start' if you are ready to go:"),sep='\n')
+    print (start.encode('cp1251').decode('utf-8'),sep='\n')
     n = input()
     if n=='Начать' or n=='начать' or n=='start' or n=='Start':
         a=0
@@ -44,33 +57,33 @@ else:
     rr = 2
 
 while d != 'True':
-    print(_('How many characters should the password contain?'))
+    print(howmany.encode('cp1251').decode('utf-8'))
     x = int(input())
     if rr == 0 or rr == 2:
         if rr == 2:
-            print(_('The license file is missing, so Trial version of the program will be launched. The waiting time for your password will be 15 seconds.'))
+            print(missing.encode('cp1251').decode('utf-8'))
         elif rr == 0:
-            print(_('The license file is corrupted, so Trial version of the program will be launched. The waiting time for your password will be 15 seconds.'))
+            print(corrupt.encode('cp1251').decode('utf-8'))
         time.sleep(1)
         for i in range(1,16):
             k = 15-i
-            print(_('Seconds left:'),k)
+            print(secleft.encode('cp1251').decode('utf-8'),k)
             time.sleep(1)
 
     pwo = PassGen(minlen = x, maxlen=x)
     l = pwo.generate()
 
-    print(_('Generating a password...'))
+    print(generating.encode('cp1251').decode('utf-8'))
     time.sleep(1)
     print('...')
     time.sleep(1)
-    print(_('Your password:'), l, end='\n')
+    print(yourpass.encode('cp1251').decode('utf-8'), l, end='\n')
     time.sleep(2)
-    print(_('Would you like to generate a new password?'))
+    print(newpass.encode('cp1251').decode('utf-8'))
     d = input()
     if d == 'Да' or d == 'да' or d == 'Yes' or d=='yes':
         d='False'
     else:
         break
-print(_('Thank you for using this program, and all the best to you. Goodbye!'))
+print(exit.encode('cp1251').decode('utf-8'))
 time.sleep(5)
