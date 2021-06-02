@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2021-05-31 00:40+0300\n"
+"POT-Creation-Date: 2021-06-02 20:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,42 +16,38 @@ msgstr ""
 
 
 #: PassGen.py:25
-msgid "Введите \"Начать\", если готовы к работе:"
+msgid "Enter 'Start' if you are ready to go:"
 msgstr "Enter 'Start' if you are ready to go:"
 
-#: PassGen.py:29
-msgid "Введите номер лицензии, если вы приобретали программу. В противном случае, введите 000000."
-msgstr "Enter the license number if you purchased the program. Otherwise, enter 000000:"
-
-#: PassGen.py:32
-msgid "Сколько символов должен содержать пароль?"
+#: PassGen.py:47
+msgid "How many characters should the password contain?"
 msgstr "How many characters should the password contain?"
 
-#: PassGen.py:35
-msgid "Т.к. у вас бесплатная версия программы, то ожидание вашего пароля будет составлять 15 секунд."
-msgstr "Since you have a free version of the program, the wait for your password will be 15 seconds."
-
-#: PassGen.py:39
-msgid "Секунд осталось:"
-msgstr "Seconds left:"
-
-#: PassGen.py:41
-msgid "Генерируем пароль..."
-msgstr "Generating a password..."
-
-#: PassGen.py:42
-msgid "Т.к. вы ввели неправильный номер лицензии, то будет запущена бесплатная версия программыю. Ожидание вашего пароля будет составлять 15 секунд."
-msgstr "Since you entered the wrong license number, the free version of the program will be launched. The waiting time for your password will be 15 seconds."
-
-#: PassGen.py:45
-msgid "Ваш пароль: "
-msgstr "Your password: "
-
 #: PassGen.py:51
-msgid "Желаете ли сгенерировать новый пароль?"
-msgstr "Would you like to generate a new password?"
+msgid "The license file is missing, so Trial version of the program will be launched. The waiting time for your password will be 15 seconds."
+msgstr "The license file is missing, so Trial version of the program will be launched. The waiting time for your password will be 15 seconds."
+
+#: PassGen.py:53
+msgid "The license file is corrupted, so Trial version of the program will be launched. The waiting time for your password will be 15 seconds."
+msgstr "The license file is corrupted, so Trial version of the program will be launched. The waiting time for your password will be 15 seconds."
 
 #: PassGen.py:57
-msgid "Спасибо за использование данной программы, всего вам доброго. До свидания!"
+msgid "Seconds left:"
+msgstr "Seconds left:"
+
+#: PassGen.py:63
+msgid "Generating a password..."
+msgstr "Generating a password..."
+
+#: PassGen.py:67
+msgid "Your password:"
+msgstr "Your password:"
+
+#: PassGen.py:69
+msgid "Would you like to generate a new password?"
+msgstr "Would you like to generate a new password?"
+
+#: PassGen.py:75
+msgid "Thank you for using this program, and all the best to you. Goodbye!"
 msgstr "Thank you for using this program, and all the best to you. Goodbye!"
 

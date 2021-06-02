@@ -1,0 +1,2 @@
+easy_password_generator==0.0.7
+pyAesCrypt==6.0.0

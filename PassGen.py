@@ -1,7 +1,8 @@
 from easy_password_generator import PassGen
 import gettext
-from modules import encrypt,decrypt
+from modules import crypt
 import time
+import os
 d = 1
 a = 1
 rr = 0
@@ -21,52 +22,55 @@ if lang == "English" or lang == 'english' or lang == 'Английский' or l
     _ = en.gettext
 
 while a!=0:
-    print (_('Введите "Начать", если готовы к работе:'),sep='\n')
+    print (_("Enter 'Start' if you are ready to go:"),sep='\n')
     n = input()
     if n=='Начать' or n=='начать' or n=='start' or n=='Start':
         a=0
 
-decrypt.decrypt(fileaes)
-with open('license.txt','r') as file123:
-    ll = file123.readline()
-ll_int = [int(x) for x in ll]
-ll = sum(ll_int)
-if ll == 26:
-    rr = 1
-elif ll == 0:
-    rr = 2
+if os.path.exists('lisense.txt.aes') == True:
+    crypt.decrypt()
+    with open('license.txt','r') as file123:
+        ll = file123.readline()
+    ll_int = [int(x) for x in ll]
+    ll = sum(ll_int)
+    if ll == 26:
+        rr = 1
+    elif ll == 0:
+        rr = 2
+    else:
+        rr = 0
+    crypt.encrypt()
 else:
-    rr = 0
-encrypt.encrypt(file)
+    rr = 2
 
 while d != 'True':
-    print(_('Сколько символов должен содержать пароль?'))
+    print(_('How many characters should the password contain?'))
     x = int(input())
     if rr == 0 or rr == 2:
         if rr == 2:
-            print(_('Т.к. у вас бесплатная версия программы, то ожидание вашего пароля будет составлять 15 секунд.'))
+            print(_('The license file is missing, so Trial version of the program will be launched. The waiting time for your password will be 15 seconds.'))
         elif rr == 0:
-            print(_('Т.к. вы ввели неправильный номер лицензии, то будет запущена бесплатная версия программы. Ожидание вашего пароля будет составлять 15 секунд.'))
+            print(_('The license file is corrupted, so Trial version of the program will be launched. The waiting time for your password will be 15 seconds.'))
         time.sleep(1)
         for i in range(1,16):
             k = 15-i
-            print(_('Секунд осталось:'),k)
+            print(_('Seconds left:'),k)
             time.sleep(1)
 
     pwo = PassGen(minlen = x, maxlen=x)
     l = pwo.generate()
 
-    print(_('Генерируем пароль...'))
+    print(_('Generating a password...'))
     time.sleep(1)
     print('...')
     time.sleep(1)
-    print(_('Ваш пароль: '), l, end='\n')
+    print(_('Your password:'), l, end='\n')
     time.sleep(2)
-    print(_('Желаете ли сгенерировать новый пароль?'))
+    print(_('Would you like to generate a new password?'))
     d = input()
     if d == 'Да' or d == 'да' or d == 'Yes' or d=='yes':
         d='False'
     else:
         break
-print(_('Спасибо за использование данной программы, всего вам доброго. До свидания!'))
+print(_('Thank you for using this program, and all the best to you. Goodbye!'))
 time.sleep(5)
