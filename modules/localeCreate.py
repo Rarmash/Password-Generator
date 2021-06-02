@@ -6,7 +6,7 @@ path = "settings.ini"
 
 def localeCreate(path):
     config.add_section("LOCALE")
-    print("Enter your language: English or Русский or Deutsch or Українська",sep='\n')
+    print("Enter your language: English or Русский or Deutsch or Українська or Azərbaycan",sep='\n')
     qq = input()
     if qq == "Русский" or qq == 'русский' or qq == 'russian' or qq == 'Russian':
         config.set("LOCALE", "language", "ru")
@@ -16,6 +16,8 @@ def localeCreate(path):
         config.set("LOCALE", "language", "de")
     if qq == "Українська" or qq == 'українська' or qq == 'украинский' or qq == 'Украинский':
         config.set("LOCALE", "language", "ua")
+    if qq == "Azərbaycan" or qq == 'azərbaycan' or qq == 'Azerbaijanian' or qq == 'azerbaijanian':
+        config.set("LOCALE", "language", "az")
     
     with open(path, "w+") as config_file:
         path = "settings.ini"
