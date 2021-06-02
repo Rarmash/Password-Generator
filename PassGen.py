@@ -14,9 +14,9 @@ if os.path.exists('settings.ini') == False:
     localeCreate.localeCreate(path)
 
 config.read("settings.ini")
-language = config.get("LOCALE", "language")  # устанавливаем локаль
+language = config.get("LOCALE", "language")
 section = language.upper()
-config.read("locales/{}.ini".format(language))  # читаем файл строковых данных
+config.read("locales/{}.ini".format(language))
 
 start = config.get(section, "start")
 howmany = config.get(section, "howmany")
