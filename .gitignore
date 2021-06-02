@@ -4,10 +4,7 @@ setup.py
 /__pycache__/*
 /locales/__pycache__/*
 /modules/__pycache__/*
-/modules/passlicense.py
 /modules/license.txt.aes
-/modules/codeencrypt.py
-/modules/codedecrypt.py
 0 license.aes
 1 license.aes
 2 license.aes
