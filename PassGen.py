@@ -1,8 +1,7 @@
-import os
+from easy_password_generator import PassGen
 import gettext
-from modules import alphabet,encrypt,decrypt
+from modules import encrypt,decrypt
 import time
-import random
 d = 1
 a = 1
 rr = 0
@@ -53,15 +52,15 @@ while d != 'True':
             k = 15-i
             print(_('Секунд осталось:'),k)
             time.sleep(1)
+
+    pwo = PassGen(minlen = x, maxlen=x)
+    l = pwo.generate()
+
     print(_('Генерируем пароль...'))
     time.sleep(1)
     print('...')
     time.sleep(1)
-    print(_('Ваш пароль: '),end='')
-    for i in range(x):
-        l=random.choice(alphabet.word)
-        print(l,end='')
-    print('')
+    print(_('Ваш пароль: '), l, end='\n')
     time.sleep(2)
     print(_('Желаете ли сгенерировать новый пароль?'))
     d = input()
