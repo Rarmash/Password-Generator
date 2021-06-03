@@ -37,9 +37,9 @@ while a!=0:
     if n=='Начать' or n=='начать' or n=='start' or n=='Start':
         a=0
 
-if os.path.exists('lisense.txt.aes') == True:
+if os.path.exists(fileaes) == True:
     crypt.decrypt()
-    with open('license.txt','r') as file123:
+    with open(file,'r') as file123:
         ll = file123.readline()
     ll_int = [int(x) for x in ll]
     ll = sum(ll_int)
