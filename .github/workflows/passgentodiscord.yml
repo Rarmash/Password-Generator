@@ -12,9 +12,9 @@ jobs:
       uses: LeGitHubDeTai/github-to-discord@main
       env:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        DISCORD_USERNAME: Tai Studio
-        DISCORD_AVATAR: https://raw.githubusercontent.com/LeGitHubDeTai/github-to-discord/main/icon.png
-        MESSAGE_TITLE: New Version
-        MESSAGE_DESCRIPTION: Github Action By Tai Studio
-        MESSAGE_URL: https://github.com/LeGitHubDeTai/AnimeBack
+        DISCORD_USERNAME: GitHub
+        DISCORD_AVATAR: https://pa1.narvii.com/7602/5a7eced281e2fa8f865bb3a452ebb98336c36e03r1-640-640_hq.gif
+        MESSAGE_TITLE: New Version available!
+        MESSAGE_DESCRIPTION: Password Generator
+        MESSAGE_URL: https://github.com/rarmash/Password-Generator
         MESSAGE_COLOR: 5814783
