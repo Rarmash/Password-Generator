@@ -16,4 +16,5 @@ jobs:
         DISCORD_AVATAR: https://raw.githubusercontent.com/LeGitHubDeTai/github-to-discord/main/icon.png
         MESSAGE_TITLE: New Version
         MESSAGE_DESCRIPTION: Github Action By Tai Studio
-        MESSAGE_URL: https://gith
+        MESSAGE_URL: https://github.com/LeGitHubDeTai/AnimeBack
+        MESSAGE_COLOR: 5814783
